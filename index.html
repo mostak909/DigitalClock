@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-sm-4"></div>
+    <div class="col-sm-4 mainb">
+    	<div class="main col-sm-12">
+			<h4 align="center">M2 Digital Clock</h4>
+			<h5 class="ht h"></h5>
+			<h5 class="mt h"></h5>
+			<h5 class="st h"></h5>
+		</div>
+		<div class="main col-sm-12">
+			<h4 align="center" id="days"></h4>
+			<h5 class="day h"></h5>
+			<h5 class="month h"></h5>
+			<h5 class="year h"></h5>
+		</div>
+	</div>
+	<div class="col-sm-4"></div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	
+	window.onload = function(){
+
+		var hEl = document.querySelector('.ht');
+		var mEl = document.querySelector('.mt');
+		var sEl = document.querySelector('.st');
+
+		
+
+		setInterval(function(){
+
+			var now = new Date();
+
+		hEl.innerHTML = now.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+		mEl.innerHTML = now.getMinutes();
+		sEl.innerHTML = now.getSeconds();
+
+		},1000)
+
+	}
+
+
+
+		var dy = new Date();
+
+		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		document.getElementById("days").innerHTML = "Today is : " + days[dy.getDay()];
+
+	
+
+		var dEl = document.querySelector('.day');
+		var moEl = document.querySelector('.month');
+		var yEl = document.querySelector('.year');
+
+		var d = new Date();
+
+		dEl.innerHTML = d.getDate();
+		moEl.innerHTML = d.getMonth();
+		yEl.innerHTML = d.getFullYear();
+
+
+	
+
+
+</script>
+
+
+</body>
+</html>
+
