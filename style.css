@@ -4,15 +4,11 @@ body{
 }
 .container{
 	margin-top: 20px;
-
 }
-
 .mainb{
 	border: 2px solid green;
 	border-radius: 6px;
-	background-color: yellow;
 }
-
 .main{
 	width: 180px;
 	float: left;
